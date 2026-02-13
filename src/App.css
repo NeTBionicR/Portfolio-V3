@@ -63,6 +63,71 @@
   height: 18px;
 }
 
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  min-height: 232px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(26, 21, 28, 0.97) 0%, rgba(20, 18, 26, 0.95) 100%);
+  padding: 1rem 7rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  /* Thin diagonal waves: top-left to bottom-right (135deg), 1px line every 2.5px = hundreds of close waves */
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0px,
+    transparent 1.5px,
+    rgba(255, 255, 255, 0.06) 1.5px,
+    rgba(255, 255, 255, 0.06) 2.5px
+  );
+}
+
+.hero__illustration {
+  position: relative;
+  z-index: 1;
+  max-width: 72%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.62;
+  mask-image: linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.85) 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.85) 65%, transparent 100%);
+}
+
+object.hero__illustration {
+  display: block;
+}
+
+:root:not(.dark) .hero {
+  background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+}
+
+:root:not(.dark) .hero::before {
+  /* Light mode: dark thin waves so they show on white/grey background */
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0px,
+    transparent 1.5px,
+    rgba(0, 0, 0, 0.055) 1.5px,
+    rgba(0, 0, 0, 0.055) 2.5px
+  );
+}
+
 .header::after {
   content: '';
   position: absolute;
@@ -88,7 +153,7 @@
   height: 100vmax;
   margin: -50vmax 0 0 -50vmax;
   border-radius: 50%;
-  background: rgba(253, 114, 0, 0.05);
+  background: rgba(148, 141, 135, 0.05);
   transform: scale(0.4);
   opacity: 0;
   animation: circle-expand 12s cubic-bezier(0.65, 0, 0.85, 1) infinite;

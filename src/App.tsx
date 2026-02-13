@@ -89,10 +89,12 @@ function App() {
           </button>
         </div>
       </header>
+      <section className="hero" aria-label="Hero illustration">
+        <img src="/hero.svg" alt="" className="hero__illustration" />
+      </section>
       <div className="circle-ripple" aria-hidden />
       <div className="circle-ripple circle-ripple--2" aria-hidden />
       <div className="circle-ripple circle-ripple--3" aria-hidden />
-      <h1>Adam Maatouk's Portfolio</h1>
     </div>
   )
 }
