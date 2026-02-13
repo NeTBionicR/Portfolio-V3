@@ -1,6 +1,72 @@
 .app {
   position: relative;
   isolation: isolate;
+  display: block;
+  text-align: inherit;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  height: 72px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  padding-right: 38rem;
+  padding-left: 38rem;
+  box-sizing: border-box;
+}
+
+.header__dark-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.header__dark-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.header__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.06) 15%,
+    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.06) 85%,
+    transparent 100%
+  );
 }
 
 .circle-ripple {
@@ -19,11 +85,41 @@
 }
 
 .circle-ripple--2 {
-  animation-delay: 3.2s;
+  animation-delay: 1s;
 }
 
 .circle-ripple--3 {
-  animation-delay: 6.4s;
+  animation-delay: 2s;
+}
+
+.dark .circle-ripple {
+  background: rgba(128, 90, 213, 0.05);
+}
+
+.dark .header {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dark .header__dark-btn {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 12px rgba(128, 90, 213, 0.28);
+}
+
+.dark .header__dark-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(128, 90, 213, 0.4);
+}
+
+.dark .header::after {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 15%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 85%,
+    transparent 100%
+  );
 }
 
 @keyframes circle-expand {
@@ -52,9 +148,12 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 5rem;
+  padding-top: 0;
   text-align: center;
+  box-sizing: border-box;
 }
+
 
 .logo {
   height: 6em;

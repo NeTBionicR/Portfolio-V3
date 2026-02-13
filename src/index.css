@@ -24,8 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -38,7 +36,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.6em 1.6em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -52,6 +50,39 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Dark mode (toggle via .dark on html) */
+:root.dark {
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #000000;
+}
+
+:root.dark body {
+  position: relative;
+}
+
+:root.dark body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(100, 70, 160, 0.1) 0%,
+    transparent 18%,
+    transparent 82%,
+    rgba(100, 70, 160, 0.1) 100%
+  );
+  z-index: 9999;
+}
+
+:root.dark a:hover {
+  color: #a5b4fc;
 }
 
 @media (prefers-color-scheme: light) {
