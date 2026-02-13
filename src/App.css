@@ -22,12 +22,18 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 24px;
-  padding-right: 38rem;
+  padding-right: 35.5rem;
   padding-left: 38rem;
   box-sizing: border-box;
 }
 
-.header__dark-btn {
+.header__btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header__btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +45,12 @@
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   border-radius: 50%;
-  transition: color 0.2s, background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.header__btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .header__dark-btn:hover {
@@ -106,6 +117,17 @@
 }
 
 .dark .header__dark-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(128, 90, 213, 0.4);
+}
+
+.dark .header__btn {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 12px rgba(128, 90, 213, 0.28);
+}
+
+.dark .header__btn:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   box-shadow: 0 0 16px rgba(128, 90, 213, 0.4);
