@@ -45,6 +45,16 @@ function App() {
     setIsMusicPlaying((prev) => !prev)
   }
 
+  const handleResumeDownload = () => {
+    playClickSfx()
+    const link = document.createElement('a')
+    link.href = '/resume.pdf'
+    link.download = 'Adam_Maatouk_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div className="app">
       <header className="header">
@@ -138,6 +148,23 @@ function App() {
           </svg>
           <span className="social__text">Email</span>
         </a>
+      </section>
+      <section className="career">
+        <h2 className="career__subtitle">So Far</h2>
+        <div className="career__row">
+          <h2 className="career__title">Career</h2>
+          <div className="career__resume">
+            <span className="career__resume-text">Need a copy?</span>
+            <button type="button" className="career__resume-btn" onClick={handleResumeDownload}>
+              <svg className="career__resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Resume
+            </button>
+          </div>
+        </div>
       </section>
       <div className="circle-ripple" aria-hidden />
       <div className="circle-ripple circle-ripple--2" aria-hidden />
