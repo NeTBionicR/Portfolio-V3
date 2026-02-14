@@ -196,48 +196,51 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className={`header__logo ${showHeaderLogo ? 'header__logo--visible' : ''}`}>
-          <img src="/hero.svg" alt="" className="header__logo-img" />
-        </div>
-        <div className="header__btns">
-          <button
-            type="button"
-            className="header__btn header__dark-btn"
-            onClick={handleDarkModeClick}
-            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            title={darkMode ? 'Light mode' : 'Dark mode'}
-          >
-            {darkMode ? (
-              <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            ) : (
-              <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <circle cx="12" cy="12" r="5" />
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-              </svg>
-            )}
-          </button>
-          <button
-            type="button"
-            className="header__btn header__music-btn"
-            onClick={handleMusicClick}
-            aria-label={isMusicPlaying ? 'Pause music' : 'Play music'}
-            title={isMusicPlaying ? 'Pause music' : 'Play music'}
-          >
-            {isMusicPlaying ? (
-              <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                <path d="M15 8v8M18 6v12M21 5v14" />
-              </svg>
-            ) : (
-              <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                <line x1="23" y1="9" x2="17" y2="15" />
-                <line x1="17" y1="9" x2="23" y2="15" />
-              </svg>
-            )}
-          </button>
+        <div className="header__inner">
+          <div className={`header__logo ${showHeaderLogo ? 'header__logo--visible' : ''}`}>
+            <img src="/hero.svg" alt="" className="header__logo-img" />
+          </div>
+          {/* Move buttons inside header__inner */}
+          <div className="header__btns">
+            <button
+              type="button"
+              className="header__btn header__dark-btn"
+              onClick={handleDarkModeClick}
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={darkMode ? 'Light mode' : 'Dark mode'}
+            >
+              {darkMode ? (
+                <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              ) : (
+                <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+              )}
+            </button>
+            <button
+              type="button"
+              className="header__btn header__music-btn"
+              onClick={handleMusicClick}
+              aria-label={isMusicPlaying ? 'Pause music' : 'Play music'}
+              title={isMusicPlaying ? 'Pause music' : 'Play music'}
+            >
+              {isMusicPlaying ? (
+                <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M15 8v8M18 6v12M21 5v14" />
+                </svg>
+              ) : (
+                <svg className="header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
       <section className="hero" ref={heroRef} aria-label="Hero illustration">
