@@ -582,6 +582,9 @@ function App() {
           </a>
         </div>
       </section>
+      <footer className="footer-name" aria-label="Footer">
+        <span className="footer-name__text">Adam</span>
+      </footer>
       <div className="circle-ripple" aria-hidden />
       <div className="circle-ripple circle-ripple--2" aria-hidden />
       <div className="circle-ripple circle-ripple--3" aria-hidden />

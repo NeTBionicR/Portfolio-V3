@@ -1803,6 +1803,48 @@
   }
 }
 
+/* Footer name at bottom of page – large, cut off by screen, fade in */
+@keyframes footer-name-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.footer-name {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 2.5rem 1.5rem 3rem 1.5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation: footer-name-fade-in 1s ease-out forwards;
+}
+
+.footer-name__text {
+  display: block;
+  font-size: clamp(5rem, 28vw, 10rem);
+  font-weight: 700;
+  font-family: inherit;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #b0b0b0 0%, #808080 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .footer-name__text {
+  background: linear-gradient(180deg, #8c67b6 0%, #560aad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .circle-ripple {
   position: fixed;
   top: 50%;
