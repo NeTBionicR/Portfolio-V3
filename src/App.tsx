@@ -4,6 +4,36 @@ import { playClickSfx } from './utils/playClickSfx'
 
 const MUSIC_SRC = '/jazz.mp3'
 
+const SKILLS: { name: string; url: string; logo: string; logoUrl?: string }[] = [
+  { name: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', logo: 'js' },
+  { name: 'TypeScript', url: 'https://www.typescriptlang.org/', logo: 'ts' },
+  { name: 'Python', url: 'https://www.python.org/', logo: 'python' },
+  { name: 'Tailwind CSS', url: 'https://tailwindcss.com/', logo: 'tailwind' },
+  { name: 'React', url: 'https://react.dev/', logo: 'react' },
+  { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML', logo: 'html' },
+  { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS', logo: 'css' },
+  { name: 'Java', url: 'https://docs.oracle.com/en/java/', logo: 'java' },
+  { name: 'C#', url: 'https://learn.microsoft.com/en-us/dotnet/csharp/', logo: 'cs' },
+  { name: 'C++', url: 'https://devdocs.io/cpp/', logo: 'cpp' },
+  { name: 'Next.js', url: 'https://nextjs.org/', logo: 'nextjs' },
+  { name: 'Three.js', url: 'https://threejs.org/', logo: 'threejs' },
+  { name: 'Firebase', url: 'https://firebase.google.com/docs', logo: 'firebase' },
+  { name: 'Supabase', url: 'https://supabase.com/docs/reference', logo: 'supabase' },
+  { name: 'Node.js', url: 'https://nodejs.org/docs/latest/api/', logo: 'nodejs' },
+  { name: 'Vercel', url: 'https://vercel.com/docs', logo: 'vercel' },
+  { name: 'MongoDB', url: 'https://www.mongodb.com/docs/', logo: 'mongodb' },
+  { name: 'Git', url: 'https://git-scm.com/docs', logo: 'git' },
+  { name: 'MySQL', url: 'https://dev.mysql.com/doc/', logo: 'mysql' },
+  { name: 'PyTorch', url: 'https://pytorch.org/', logo: 'pytorch' },
+  { name: 'NumPy', url: 'https://numpy.org/', logo: 'python' },
+  { name: 'Kotlin', url: 'https://kotlinlang.org/docs/home.html', logo: 'kotlin' },
+  { name: 'Swift', url: 'https://www.swift.org/documentation/', logo: 'swift' },
+  { name: 'WordPress', url: 'https://wordpress.org/documentation/', logo: 'wordpress' },
+  { name: 'Unity', url: 'https://docs.unity.com/en-us', logo: 'unity' },
+  { name: 'Dart', url: 'https://dart.dev/docs', logo: 'dart' },
+  { name: 'Flutter', url: 'https://docs.flutter.dev', logo: 'flutter' },
+]
+
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem('portfolio-dark-mode')
@@ -268,6 +298,28 @@ function App() {
             </ul>
           )}
           </div>
+        </div>
+      </section>
+      <section className="skills">
+        <h2 className="skills__subtitle">Core</h2>
+        <h2 className="skills__title">Skills</h2>
+        <div className="skills__grid">
+          {SKILLS.map((skill) => (
+            <a
+              key={skill.url + skill.name}
+              href={skill.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="skills__link"
+            >
+              <img
+                src={skill.logoUrl ?? `https://skillicons.dev/icons?i=${skill.logo}`}
+                alt=""
+                className="skills__logo"
+              />
+              <span className="skills__name">{skill.name}</span>
+            </a>
+          ))}
         </div>
       </section>
       <div className="circle-ripple" aria-hidden />
