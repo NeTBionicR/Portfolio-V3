@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import './App.css'
 import { playClickSfx } from './utils/playClickSfx'
+import { logConsoleEasterEgg } from './consoleEasterEgg'
 import 'react-github-calendar/tooltips.css'
 
 const GitHubCalendarSection = lazy(() => import('./GitHubCalendarSection'))
@@ -127,6 +128,8 @@ function App() {
   const handleDarkModeClick = () => {
     playClickSfx()
     setDarkMode((prev) => !prev)
+    console.clear()
+    logConsoleEasterEgg(!darkMode)
   }
 
   const handleMusicClick = () => {
