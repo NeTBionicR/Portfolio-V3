@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import { playClickSfx } from './utils/playClickSfx'
+import { GitHubCalendar } from 'react-github-calendar'
+import 'react-github-calendar/tooltips.css'
 
 const MUSIC_SRC = '/jazz.mp3'
 
@@ -508,6 +510,37 @@ function App() {
               />
             ))}
           </div>
+        </div>
+      </section>
+      <section className="github" aria-label="GitHub contributions">
+        <h2 className="github__subtitle">Contributions</h2>
+        <h2 className="github__title">Github</h2>
+        <div className="github__chart-wrap">
+          <GitHubCalendar
+            username="AdamMTK-NB"
+            year={2026}
+            colorScheme={darkMode ? 'dark' : 'light'}
+            blockSize={11}
+            blockMargin={2.4}
+            blockRadius={3}
+            fontSize={15}
+            tooltips={{
+              activity: {
+                hoverRestMs: 0,
+                text: (activity) => {
+                  const d = new Date(activity.date + 'Z')
+                  const month = d.toLocaleString('en-US', { month: 'long' })
+                  const day = d.getUTCDate()
+                  const year = d.getUTCFullYear()
+                  if (activity.count === 0) {
+                    return `No contributions on ${month} ${day}, ${year}`
+                  }
+                  const word = activity.count === 1 ? 'contribution' : 'contributions'
+                  return `${activity.count} ${word} on ${month} ${day}, ${year}`
+                },
+              },
+            }}
+          />
         </div>
       </section>
       <div className="circle-ripple" aria-hidden />

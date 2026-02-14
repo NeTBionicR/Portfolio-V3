@@ -1537,6 +1537,60 @@
   );
 }
 
+/* GitHub contributions section */
+.github {
+  position: relative;
+  width: 100%;
+  max-width: 764px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Let the full-year chart show; scroll horizontally when narrower than the chart */
+.github__chart-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  min-width: 0;
+}
+
+.github__subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #87887f;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.github__title {
+  margin: 0 0 1.25rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.dark .github {
+  background: #000000;
+}
+
+.dark .github__subtitle {
+  color: #a1a19b;
+}
+
+.dark .github__title {
+  color: #e8e8e8;
+}
+
 .circle-ripple {
   position: fixed;
   top: 50%;
