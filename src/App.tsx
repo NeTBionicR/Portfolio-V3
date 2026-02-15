@@ -262,10 +262,6 @@ function App() {
             Email Me
           </a>
         </div>
-        <p className="intro__text">
-          Do you want to see the fun side of my work? Dive deeper into my world.{' '}
-          <button type="button" className="intro__btn intro__btn--inline" data-tooltip="prepare yourself">Get to the fun side</button>
-        </p>
       </section>
       <section className="social">
         <a href="https://www.linkedin.com/in/adammaatouk/" target="_blank" rel="noopener noreferrer" className="social__link" data-tooltip="/in/adammaatouk">
