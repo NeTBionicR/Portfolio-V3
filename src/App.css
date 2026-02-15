@@ -2161,6 +2161,281 @@
 /* ============================================
    DARK MODE OVERRIDES
    ============================================ */
+
+/* Section backgrounds – intro, social, career, experience, skills, projects */
+.dark .intro,
+.dark .social,
+.dark .career,
+.dark .experience,
+.dark .skills,
+.dark .projects {
+  background: #000000;
+}
+
+/* Intro section – dark text/buttons */
+.dark .intro__name {
+  color: #ffffff;
+}
+
+.dark .intro__roles,
+.dark .intro__text {
+  color: #d6cfcf;
+}
+
+.dark .intro__btn {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border-color: rgba(160, 64, 240, 0.4);
+}
+
+.dark .intro__btn:hover {
+  border-color: rgba(160, 64, 240, 0.8);
+  color: #f0f0f0;
+}
+
+.dark .intro__btn-icon {
+  color: #888888;
+}
+
+.dark .intro__cta-or {
+  color: #aaaaaa;
+}
+
+.dark .intro__btn--inline:hover {
+  color: #f0f0f0;
+}
+
+/* Social section */
+.dark .social::after {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 15%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 85%,
+    transparent 100%
+  );
+}
+
+.dark .social__link {
+  color: #aaaaaa;
+}
+
+.dark .social__link:hover {
+  color: #cccccc;
+}
+
+/* Career section */
+.dark .career__subtitle {
+  color: #a1a19b;
+}
+
+.dark .career__title {
+  color: #e8e8e8;
+}
+
+.dark .career__resume-text {
+  color: #aaaaaa;
+}
+
+.dark .career__resume-btn {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border-color: rgba(160, 64, 240, 0.4);
+}
+
+.dark .career__resume-btn:hover {
+  border-color: rgba(160, 64, 240, 0.8);
+  background: #1a1a1a;
+}
+
+.dark .career__resume-icon {
+  color: #888888;
+}
+
+/* Experience section */
+.dark .experience__tabs {
+  background: #2a3541;
+}
+
+.dark .experience__tab {
+  color: #9ca3af;
+}
+
+.dark .experience__tab:hover:not(.experience__tab--active) {
+  color: #d1d5db;
+}
+
+.dark .experience__tab--active {
+  background: #0a0f18;
+  color: #ffffff;
+}
+
+.dark .experience__timeline {
+  border-left-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .experience__icon {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .experience__icon--edu {
+  background: #222222;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .experience__title {
+  color: #ffffff;
+}
+
+.dark .experience__dates {
+  color: #aaaaaa;
+}
+
+.dark .experience__role,
+.dark .experience__bullets {
+  color: #b0b0b0;
+}
+
+.dark .experience__project-btn {
+  background: #2a2a2a;
+  color: #e8e8e8;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .experience__project-btn:hover {
+  background: #333333;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Skills section */
+.dark .skills__subtitle {
+  color: #a1a19b;
+}
+
+.dark .skills__title {
+  color: #e8e8e8;
+}
+
+.dark .skills__link {
+  background: #2d1b4e;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.dark .skills__link:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: #3d2860;
+  color: #ffffff;
+}
+
+/* Projects section */
+.dark .projects__subtitle {
+  color: #a1a19b;
+}
+
+.dark .projects__title {
+  color: #e8e8e8;
+}
+
+.dark .projects__card-title {
+  color: #e8e8e8;
+}
+
+.dark .projects__card-subtext {
+  color: #a1a19b;
+}
+
+.dark .projects__link {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: #2d1b4e;
+}
+
+.dark .projects__link:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: #3d2860;
+  color: #ffffff;
+}
+
+.dark .projects__dot {
+  background: #3d2860;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .projects__dot:hover {
+  background: #5b4d7a;
+}
+
+.dark .projects__dot--active {
+  background: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.6);
+}
+
+.dark .projects__tech-footer {
+  background: #2d1b4e;
+  border-top-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .projects__tech-text {
+  color: #e8e8e8;
+}
+
+.dark .projects__nav {
+  background: #2d1b4e;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.dark .projects__nav:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: #3d2860;
+  color: #ffffff;
+}
+
+.dark .experience::before,
+.dark .projects::before {
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    );
+}
+
+.dark .experience::after,
+.dark .projects::after {
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    );
+}
+
 .dark .header {
   background: rgba(0, 0, 0, 0.4);
 }
