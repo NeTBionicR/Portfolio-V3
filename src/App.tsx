@@ -262,6 +262,9 @@ function App() {
             Email Me
           </a>
         </div>
+        <p className="intro__text">
+          More to be added soon... Prepare yourself for the fun side of my work.{' '}
+        </p>
       </section>
       <section className="social">
         <a href="https://www.linkedin.com/in/adammaatouk/" target="_blank" rel="noopener noreferrer" className="social__link" data-tooltip="/in/adammaatouk">
