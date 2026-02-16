@@ -107,8 +107,14 @@ function App() {
     const audio = new Audio(MUSIC_SRC)
     audio.loop = true
     audio.volume = 0.2
+    const onEnded = () => {
+      audio.currentTime = 0
+      audio.play().catch(() => {})
+    }
+    audio.addEventListener('ended', onEnded)
     audioRef.current = audio
     return () => {
+      audio.removeEventListener('ended', onEnded)
       audio.pause()
       audio.src = ''
     }
