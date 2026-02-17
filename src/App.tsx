@@ -39,6 +39,9 @@ const SKILLS: { name: string; url: string; logo: string; logoUrl?: string }[] = 
   { name: 'Flutter', url: 'https://docs.flutter.dev', logo: 'flutter' },
 ]
 
+const MAX_CATS = 30
+const CAT_IDS = Array.from({ length: MAX_CATS }, (_, i) => i + 1)
+
 type Project = {
   id: string
   title: string
@@ -90,6 +93,8 @@ function App() {
     return stored === 'true'
   })
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+  const [showCats, setShowCats] = useState(false)
+  const [missingCats, setMissingCats] = useState<Set<number>>(new Set())
   const [experienceTab, setExperienceTab] = useState<'work' | 'education'>('work')
   const [showHeaderLogo, setShowHeaderLogo] = useState(false)
   const [projectIndex, setProjectIndex] = useState(0)
@@ -149,6 +154,14 @@ function App() {
       audio.play().catch(() => {})
     }
     setIsMusicPlaying((prev) => !prev)
+  }
+
+  const handleCatImageError = (id: number) => {
+    setMissingCats((prev) => {
+      const next = new Set(prev)
+      next.add(id)
+      return next
+    })
   }
 
   const handleResumeDownload = () => {
@@ -586,7 +599,53 @@ function App() {
       </section>
       <footer className="footer-name" aria-label="Footer">
         <span className="footer-name__text">Adam</span>
+        <div className="footer-name__cat-cta">
+          <button
+            type="button"
+            className="intro__btn footer-name__cat-btn"
+            onClick={() => setShowCats(true)}
+          >
+            Meet my chaotic coworkers
+          </button>
+        </div>
       </footer>
+      {showCats && (
+        <div className="cats-modal" role="dialog" aria-modal="true" aria-label="Cat photo gallery">
+          <div
+            className="cats-modal__backdrop"
+            onClick={() => setShowCats(false)}
+            aria-hidden="true"
+          />
+          <div className="cats-modal__content">
+            <button
+              type="button"
+              className="cats-modal__close"
+              aria-label="Close cat photos"
+              onClick={() => setShowCats(false)}
+            >
+              ×
+            </button>
+            <h2 className="cats-modal__title">Meet my chaotic coworkers</h2>
+            <p className="cats-modal__subtitle">
+              Yes, these are the real senior engineers behind this portfolio.
+            </p>
+            <div className="cats-modal__grid">
+              {CAT_IDS.filter((id) => !missingCats.has(id)).map((id) => (
+                <figure key={id} className="cats-modal__item">
+                  <img
+                    src={`/cats/${id}.jpg`}
+                    alt={`Cat ${id}`}
+                    className="cats-modal__img"
+                    loading="lazy"
+                    onError={() => handleCatImageError(id)}
+                  />
+                  <figcaption className="cats-modal__caption">Resident QA engineer #{id}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
       <div className="circle-ripple" aria-hidden />
       <div className="circle-ripple circle-ripple--2" aria-hidden />
       <div className="circle-ripple circle-ripple--3" aria-hidden />
