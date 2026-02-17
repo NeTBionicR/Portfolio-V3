@@ -2227,6 +2227,13 @@
   border-radius: 10px;
   overflow: hidden;
   background: #f3f4f6;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cats-modal__item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .dark .cats-modal__item {
@@ -2259,6 +2266,62 @@
 
 .dark .cats-modal__hint {
   color: #6b7280;
+}
+
+/* Cat image zoom lightbox */
+.cats-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 11001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.cats-zoom__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.cats-zoom__close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 11002;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.cats-zoom__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.cats-zoom__img {
+  position: relative;
+  z-index: 11002;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
 }
 
 .dark .footer-name__text {

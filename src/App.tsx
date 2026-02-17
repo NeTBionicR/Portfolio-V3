@@ -94,6 +94,7 @@ function App() {
   })
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
   const [showCats, setShowCats] = useState(false)
+  const [zoomedCatId, setZoomedCatId] = useState<number | null>(null)
   const [missingCats, setMissingCats] = useState<Set<number>>(new Set())
   const [experienceTab, setExperienceTab] = useState<'work' | 'education'>('work')
   const [showHeaderLogo, setShowHeaderLogo] = useState(false)
@@ -612,7 +613,7 @@ function App() {
           <button
             type="button"
             className="intro__btn footer-name__cat-btn"
-            onClick={() => setShowCats(true)}
+            onClick={() => { setShowCats(true); setZoomedCatId(null); }}
           >
             Meet my chaotic coworkers
           </button>
@@ -641,7 +642,15 @@ function App() {
               </p>
               <div className="cats-modal__grid">
                 {CAT_IDS.filter((id) => !missingCats.has(id)).map((id) => (
-                  <figure key={id} className="cats-modal__item">
+                  <figure
+                    key={id}
+                    className="cats-modal__item"
+                    onClick={(e) => { e.stopPropagation(); setZoomedCatId(id); }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setZoomedCatId(id); } }}
+                    aria-label={`Zoom cat ${id}`}
+                  >
                     <img
                       src={`/cats/${id}.jpg`}
                       alt={`Cat ${id}`}
@@ -652,6 +661,34 @@ function App() {
                   </figure>
                 ))}
               </div>
+              {zoomedCatId !== null && (
+                <div
+                  className="cats-zoom"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Zoomed cat photo"
+                >
+                  <div
+                    className="cats-zoom__backdrop"
+                    onClick={() => setZoomedCatId(null)}
+                    aria-hidden="true"
+                  />
+                  <button
+                    type="button"
+                    className="cats-zoom__close"
+                    aria-label="Close zoom"
+                    onClick={() => setZoomedCatId(null)}
+                  >
+                    ×
+                  </button>
+                  <img
+                    src={`/cats/${zoomedCatId}.jpg`}
+                    alt={`Cat ${zoomedCatId} zoomed`}
+                    className="cats-zoom__img"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
