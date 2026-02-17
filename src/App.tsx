@@ -635,11 +635,13 @@ function App() {
             >
               ×
             </button>
-            <div className="cats-modal__body">
+            <header className="cats-modal__header">
               <h2 className="cats-modal__title">Meet my chaotic coworkers</h2>
               <p className="cats-modal__subtitle">
                 Yes, these are the real senior engineers behind this portfolio.
               </p>
+            </header>
+            <div className="cats-modal__body">
               <div className="cats-modal__grid">
                 {CAT_IDS.filter((id) => !missingCats.has(id)).map((id) => (
                   <figure
