@@ -2169,14 +2169,28 @@
   font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .cats-modal__close:hover {
-  background: rgba(148, 163, 184, 0.18);
+  background: rgba(148, 163, 184, 0.25);
+  color: #374151;
+}
+
+.cats-modal__close:active {
+  transform: scale(0.95);
 }
 
 .dark .cats-modal__close {
   color: #9ca3af;
+}
+
+.dark .cats-modal__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #e5e7eb;
 }
 
 .cats-modal__title {
