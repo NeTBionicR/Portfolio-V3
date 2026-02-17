@@ -639,7 +639,6 @@ function App() {
                     loading="lazy"
                     onError={() => handleCatImageError(id)}
                   />
-                  <figcaption className="cats-modal__caption">Resident QA engineer #{id}</figcaption>
                 </figure>
               ))}
             </div>
