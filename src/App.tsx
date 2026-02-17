@@ -126,6 +126,15 @@ function App() {
   }, [])
 
   useEffect(() => {
+    if (!showCats) return
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = originalOverflow
+    }
+  }, [showCats])
+
+  useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current) return
       const heroBottom = heroRef.current.getBoundingClientRect().bottom
@@ -625,22 +634,24 @@ function App() {
             >
               ×
             </button>
-            <h2 className="cats-modal__title">Meet my chaotic coworkers</h2>
-            <p className="cats-modal__subtitle">
-              Yes, these are the real senior engineers behind this portfolio.
-            </p>
-            <div className="cats-modal__grid">
-              {CAT_IDS.filter((id) => !missingCats.has(id)).map((id) => (
-                <figure key={id} className="cats-modal__item">
-                  <img
-                    src={`/cats/${id}.jpg`}
-                    alt={`Cat ${id}`}
-                    className="cats-modal__img"
-                    loading="lazy"
-                    onError={() => handleCatImageError(id)}
-                  />
-                </figure>
-              ))}
+            <div className="cats-modal__body">
+              <h2 className="cats-modal__title">Meet my chaotic coworkers</h2>
+              <p className="cats-modal__subtitle">
+                Yes, these are the real senior engineers behind this portfolio.
+              </p>
+              <div className="cats-modal__grid">
+                {CAT_IDS.filter((id) => !missingCats.has(id)).map((id) => (
+                  <figure key={id} className="cats-modal__item">
+                    <img
+                      src={`/cats/${id}.jpg`}
+                      alt={`Cat ${id}`}
+                      className="cats-modal__img"
+                      loading="lazy"
+                      onError={() => handleCatImageError(id)}
+                    />
+                  </figure>
+                ))}
+              </div>
             </div>
           </div>
         </div>
