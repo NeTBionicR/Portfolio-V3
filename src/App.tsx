@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import './App.css'
-import { playClickSfx } from './utils/playClickSfx'
 import { logConsoleEasterEgg } from './consoleEasterEgg'
 import 'react-github-calendar/tooltips.css'
 import { GitHubCalendar } from 'react-github-calendar'
@@ -148,14 +147,12 @@ function App() {
   }, [])
 
   const handleDarkModeClick = () => {
-    playClickSfx()
     setDarkMode((prev) => !prev)
     console.clear()
     logConsoleEasterEgg(!darkMode)
   }
 
   const handleMusicClick = () => {
-    playClickSfx()
     const audio = audioRef.current
     if (!audio) return
     if (isMusicPlaying) {
@@ -175,7 +172,6 @@ function App() {
   }
 
   const handleResumeDownload = () => {
-    playClickSfx()
     const link = document.createElement('a')
     link.href = '/resume.pdf'
     link.download = 'Adam_Maatouk_Resume.pdf'
@@ -185,7 +181,6 @@ function App() {
   }
 
   const handleExperienceTab = (tab: 'work' | 'education') => {
-    playClickSfx()
     setExperienceTab(tab)
   }
 
@@ -205,20 +200,17 @@ function App() {
   }, [leavingIndex])
 
   const handleProjectPrev = () => {
-    playClickSfx()
     const next = projectIndex === 0 ? PROJECTS.length - 1 : projectIndex - 1
     runTransition('prev', next)
   }
 
   const handleProjectNext = () => {
-    playClickSfx()
     const next = projectIndex === PROJECTS.length - 1 ? 0 : projectIndex + 1
     runTransition('next', next)
   }
 
   const handleProjectDot = (index: number) => {
     if (index === projectIndex) return
-    playClickSfx()
     const direction = index > projectIndex ? 'next' : 'prev'
     runTransition(direction, index)
   }
