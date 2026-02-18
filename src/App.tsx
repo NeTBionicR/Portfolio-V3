@@ -695,9 +695,6 @@ function App() {
           </div>
         </div>
       )}
-      <div className="circle-ripple" aria-hidden />
-      <div className="circle-ripple circle-ripple--2" aria-hidden />
-      <div className="circle-ripple circle-ripple--3" aria-hidden />
     </div>
   )
 }
