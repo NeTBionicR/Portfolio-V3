@@ -1527,7 +1527,7 @@
 }
 
 /* On mobile, always show tech stack (no hover) – keep as overlay so it isn’t clipped */
-@media (max-width: 768px) {
+@media (max-width: 639px) {
   .projects__tech-footer {
     transform: translateY(0) !important;
   }
