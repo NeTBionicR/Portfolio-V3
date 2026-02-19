@@ -371,6 +371,10 @@ function App() {
                     <li>Diagnosed and resolved production issues using logs and metrics, reducing recurring user-reported bugs by 25%.</li>
                     <li>Supported live product demos at World Summit AI, increasing partner engagement and inbound interest by approximately 15%.</li>
                   </ul>
+                  <a href="https://athenachat.bot/chatbot" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
                 </div>
               </li>
             </ul>
@@ -387,6 +391,10 @@ function App() {
                     <span className="experience__dates">Aug 2025 – May 2029</span>
                   </div>
                   <p className="experience__role">Bachelor's in Software Engineering</p>
+                  <a href="https://www.concordia.ca/academics/undergraduate/software-engineering.html" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
                 </div>
               </li>
               <li className="experience__entry">
@@ -402,6 +410,10 @@ function App() {
                   <ul className="experience__bullets">
                     <li>Mandatory Internship</li>
                   </ul>
+                  <a href="https://www.cmaisonneuve.qc.ca/programme/developpement-applications/" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
                   <a href="/Adam_Maatouk_Transcript.pdf" className="experience__project-btn" target="_blank" rel="noopener noreferrer" download>
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Transcript

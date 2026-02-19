@@ -1037,6 +1037,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   padding: 0.3rem 0.6rem; /* Mobile */
   font-size: clamp(0.75rem, 2vw, 0.82rem); /* Fluid */
   font-weight: 500;
