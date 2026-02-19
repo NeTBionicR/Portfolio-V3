@@ -1526,6 +1526,13 @@
   transform: translateY(0);
 }
 
+/* On mobile, always show tech stack (no hover) – keep as overlay so it isn’t clipped */
+@media (max-width: 768px) {
+  .projects__tech-footer {
+    transform: translateY(0) !important;
+  }
+}
+
 .projects__tech-text {
   margin: 0;
   font-size: clamp(0.7rem, 1.8vw, 0.75rem); /* Fluid */
