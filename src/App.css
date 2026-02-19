@@ -1526,13 +1526,6 @@
   transform: translateY(0);
 }
 
-/* On mobile, always show tech stack (no hover) – keep as overlay so it isn’t clipped */
-@media (max-width: 639px) {
-  .projects__tech-footer {
-    transform: translateY(0) !important;
-  }
-}
-
 .projects__tech-text {
   margin: 0;
   font-size: clamp(0.7rem, 1.8vw, 0.75rem); /* Fluid */
@@ -2714,17 +2707,12 @@
 }
 
 /* Touch device optimizations */
-@media (hover: none) {
-  .projects__tech-footer {
-    transform: translateY(0);
-    position: relative;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-  }
-  
-  .projects__image-wrap {
-    display: flex;
-    flex-direction: column;
+/* Mobile: always show tech stack (no hover) */
+@media (max-width: 639px) {
+  .projects__image-wrap .projects__tech-footer,
+  .projects__image-wrap:hover .projects__tech-footer,
+  .projects__image-wrap:active .projects__tech-footer {
+    transform: translateY(0) !important;
   }
 }
 
