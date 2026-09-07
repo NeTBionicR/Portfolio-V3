@@ -53,6 +53,15 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    id: 'spotlight',
+    title: 'SpotLight – MuslimHacks 2026 Winner',
+    subtext: 'Built in 24 hours: a local-first browser extension that monitors outbound traffic, explains tracking in plain English, and lets users block or spoof sensitive data — no servers, no cloud.',
+    techStack: 'React, TypeScript, Vite, Chrome Extension Manifest V3',
+    image: 'SpotLight.png',
+    websiteUrl: 'https://spotlightwebsite.vercel.app',
+    sourceUrl: 'https://github.com/AK-Issac/SpotLight',
+  },
+  {
     id: 'rumy',
     title: 'Rumy',
     subtext: 'Building a roommate-management mobile platform for shared household expectations.',
@@ -554,6 +563,35 @@ function App() {
           )}
           {experienceTab === 'hackathons' && (
             <ul className="experience__timeline">
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/MuslimHacks.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">SpotLight - Privacy Browser Extension</h3>
+                    <span className="experience__dates">Sep 2026</span>
+                  </div>
+                  <p className="experience__role">1st Place - MuslimHacks 2026</p>
+                  <ul className="experience__bullets">
+                    <li>Built SpotLight in 24 hours with a team — a local-first browser extension that monitors outbound traffic and explains tracking and fingerprinting attempts in plain English.</li>
+                    <li>Enabled users to block trackers or spoof sensitive data (geolocation, device fingerprints) with one click, with no servers or cloud infrastructure.</li>
+                    <li>Turned a complex privacy problem into a clear product and pitch, placing 1st overall with teammates Ayoub Khial and Anis Djenadi.</li>
+                  </ul>
+                  <a href="https://spotlightwebsite.vercel.app" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
+                  <a href="https://github.com/AK-Issac/SpotLight" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    GitHub
+                  </a>
+                  <a href="https://devpost.com/software/spotlight-jsz3tg" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Devpost
+                  </a>
+                </div>
+              </li>
               <li className="experience__entry">
                 <div className="experience__icon experience__icon--img">
                   <img src="/CareXR.png" alt="" className="experience__icon-img" />
